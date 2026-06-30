@@ -36,6 +36,23 @@ By querying across these interconnected tables, I extracted insights about skill
 - **Version Control:** Git/GitHub for versioned SQL scripts
 
 ## Analysis Overview 
-
+- **[Top Demanded Skills](./01_top_demanded_skills.sql)** – Identifies the 10 most in-demand skills for remote data engineer positions
+- **[Top Paying Skills](./02_top_paying_skills.sql)** – Analyzes the 30 highest-paying skills with salary and demand metrics
+- **[Optimal Skills](./03_optimal_skills.sql)** – Calculates an optimal score using natural log of demand combined with median salary to identify the most valuable skills to learn
 
 ## SQL Skills
+
+### Query Design & Optimization
+
+- **Complex Joins:** Multi-table `INNER JOIN` operations across `job_postings_fact`, `skills_job_dim,` and `skills_dim`
+- **Aggregations:** `COUNT()`, `MEDIAN()`, `ROUND()` for statistical analysis
+- **Filtering:** Boolean logic with `WHERE` clauses and multiple conditions (`job_title_short`, `job_work_from_home`, `salary_year_avg IS NOT NULL`)
+- **Sorting & Limiting:** `ORDER BY` with `DESC` and `LIMIT` for top-N analysis
+
+### Data Analysis Techniques
+
+- **Grouping:** `GROUP BY` for categorical analysis by skill
+- **Mathematical Functions:** `LN()` for natural logarithm transformation to normalize demand metrics
+- **Calculated Metrics:** Derived optimal score combining log-transformed demand with median salary
+- **HAVING Clause:** Filtering aggregated results (skills with >= 100 postings)
+- **NULL Handling:** Proper filtering of incomplete records (`salary_year_avg IS NOT NULL`)
