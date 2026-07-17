@@ -28,6 +28,7 @@ SELECT
     )
 FROM skill_table;
 
+
 --Array of Struct--
 SELECT [
 { skill: 'python', type: 'programming'}, 
@@ -52,4 +53,8 @@ SELECT
 ) array_struct
 FROM skill_table
 )
-SELECT * FROM skills_array_struct;
+SELECT 
+    array_struct[1].skill,
+    array_struct[2].type,
+    array_struct[3]
+FROM skills_array_struct;
