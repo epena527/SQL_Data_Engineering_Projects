@@ -40,3 +40,11 @@ SELECT
     job_id
 FROM read_csv('https://storage.googleapis.com/sql_de/skills_job_dim.csv',
     AUTO_DETECT=true);
+
+SELECT 'Company Dim' AS table_name, COUNT(*) AS record_count FROM company_dim
+UNION ALL 
+SELECT 'Skills Dim', COUNT(*) FROM skills_dim
+UNION ALL 
+SELECT 'Job Postings Fact', COUNT(*) FROM job_postings_fact
+UNION ALL 
+SELECT 'Skills Job Dim', COUNT(*) FROM skills_job_dim;
