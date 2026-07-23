@@ -1,8 +1,6 @@
 # Data Warehouse & Mart Build: PRD ETL Pipeline
 
-An end-to-end data engineering pipeline that transforms raw CSV files from Google Cloud Storage into a normalized star schema data warehouse, then builds analytical data marts.
-
-![Data Pipeline Architecture](../Images\1_2_Project2_Data_Pipeline.png)
+An End to End data engineering pipeline that transforms raw CSV files from Google Cloud Storage into a normalized star schema data warehouse, then builds analytical data marts.
 
 ---
 
@@ -110,20 +108,6 @@ Priority role tracking with incremental updates using MERGE operations.
 - **Purpose:** Track priority roles and job snapshots with incremental update capabilities
 - **Grain:** One row per job posting with priority level assignment
 - **Key Features:** **MERGE operations for incremental updates** - demonstrates production-ready upsert patterns (INSERT, UPDATE, DELETE in single statement)
-
-### Company Mart (Optional)
-
-Company hiring trends by role, location, and month.
-
-![Company Mart Schema](../Images/1_2_Company_Mart.png)
-
-- **SQL File:** [`07_create_company_mart.sql`](./07_create_company_mart.sql) – Builds company hiring trends mart (optional)
-- **Purpose:** Company hiring trends analysis by role, location, and month
-- **Grain:** `company_id + job_title_short_id + location_id + month_start_date`
-- **Key Features:** Bridge tables for many-to-many relationships (company-location, job title hierarchies)
-- **Note:** This mart is optional and can be skipped if not needed
-
----
 
 ## Data Engineering Skills Demonstrated
 
