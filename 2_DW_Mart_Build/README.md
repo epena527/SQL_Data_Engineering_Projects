@@ -49,7 +49,6 @@ Raw job posting data arrives as flat CSV files in Google Cloud Storage—not str
 ├── 04_create_skills_mart.sql      # Skills demand mart
 ├── 05_create_priority_mart.sql    # Priority roles mart
 ├── 06_update_priority_mart.sql    # Priority mart incremental update (MERGE)
-├── 07_create_company_mart.sql     # Company hiring mart (optional)
 ├── build_dw_marts.sql             # Master SQL build script
 └── README.md                       # You are here
 ```
@@ -144,5 +143,5 @@ Priority role tracking with incremental updates using MERGE operations.
 - **Idempotency:** All scripts safely rerunnable without side effects  
 - **Data Validation:** Verification queries at each pipeline step to ensure data integrity  
 - **Type Safety:** Proper data type definitions (`VARCHAR`, `INTEGER`, `DOUBLE`, `BOOLEAN`, `TIMESTAMP`)  
-- **Schema Organization:** Separate schemas (`flat_mart`, `skills_mart`, `priority_mart`, `company_mart`) for logical separation  
+- **Schema Organization:** Separate schemas (`flat_mart`, `skills_mart`, `priority_mart`) for logical separation  
 - **Error Handling:** Structured script execution with clear error messages and progress reporting  
